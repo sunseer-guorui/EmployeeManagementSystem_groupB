@@ -1,7 +1,9 @@
 package com.sunseer.groupB.dao.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.sunseer.groupB.dao.LoginpassDao;
@@ -15,15 +17,13 @@ public class LoginpassDaoImpl implements LoginpassDao {
 
 	@Override
 	public boolean SelectLoginpass(Loginpass loginpass) {
-		String sql = "select case when author_mail=? and author_password=? "
-				+ "then 'true' else 'false end from UserDataAuthor";
+		String sql = "select * from userdataauthor where author_mail=?";
+		RowMapper<Loginpass> rowMapper = new BeanPropertyRowMapper<Loginpass>(Loginpass.class);
 		//条件にあう列数(0か1)が代入される
-		int coincidence = this.jdbcTemplate.update(sql,loginpass.getMailAdress(),loginpass.getPassword());
-		if(coincidence >0) {
-			return true;
-		}else {
-			return false;
-		}
+		Loginpass matchLoginpass = jdbcTemplate.queryForObject
+				(sql, rowMapper,loginpass.getAuthor_mail());
+		System.out.println(loginpass.equals(matchLoginpass));
+		return loginpass.equals(matchLoginpass);
 	}
 
 }

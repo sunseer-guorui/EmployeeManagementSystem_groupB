@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang=ja>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset=UTF-8">
+	<meta charset="UTF-8">
 	<title>ログイン</title>
-	<link rel="stylesheet" type="text/css" href="./default.css">
+	<link rel="stylesheet" type="text/css" href="../default.css">
 	<style type="text/css">
 	.auto-style3 {
 	}
@@ -19,21 +20,21 @@
 	<p style="text-align: center;">
     <img src="images/logo.jpg" height="83" width="406"/>
     </p>
-	<center><p style="font-size: xx-large">社員管理システム</p></font></center>
+	<font><p style="font-size: xx-large">社員管理システム</p></font>
 <br>
 <br>
-		<form method="post" action="index.html" style="height: 296px">
+		<form th:action="@{/groupB/B0}" method="post" style="height: 296px">
 			<table align="center" style="width: 529px">
 				<tr>
 					<th style="width: 302px">　　　　　 メールアドレス：</th>
 					<td style="width: 429px">
-					<input type="text"  name="mailAdress"  value="" required class="auto-style2" style="width: 180px"></td>
+					<input type="text"  name="author_mailAdress"  value="" required class="auto-style2" style="width: 180px"></td>
 				</tr>
 
 				<tr>
 					<th style="width: 302px">　　　　　　　パスワード：</th>
 					<td style="width: 429px">
-					<input type="password"  name="password" align ="left" required class="auto-style3" style="width: 180px"></td>
+					<input type="password"  name="author_password" align ="left" required class="auto-style3" style="width: 180px"></td>
 				</tr>
 				<tr>
 					<th style="width: 302px">　　</th>
@@ -42,16 +43,14 @@
 				<tr>
 					<td colspan="2">　　　　会員登録時のメールアドレスとパスワードでログインいただけます</td>
 				</tr>
-			</table align="center">
+			</table>
 
-	　　　　　　　<div class="button-panel" style="width: 100%" align="center">
-		 　　　　　
-		 <input type="submit" class="button" title="Sign In" value="ログイン" style="width: 46%" onclick="location.href='index.html'"></input>
-		　　　　　</div>
+				<div class="button-panel" style="width: 100%" align="center">
+
+					<input type="submit" class="button" title="Sign In" value="ログイン" style="width: 46%"></input><!--  onclick="location.href='index.html'" -->
+				</div>
 			</input>
-		　　　　　</div>
-
-
+				</div>
 		</form>
 		<hr>
 		<center><div> <a>〒110-0015 東京東上野台東市6丁目−2−番1号MPR東上野ビル10F</a></div></center>
@@ -59,3 +58,4 @@
 	</div>
 </body>
 </html>
+
