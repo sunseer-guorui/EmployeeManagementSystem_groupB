@@ -18,7 +18,7 @@ public class LoginpassDaoImpl implements LoginpassDao {
 		String sql = "select case when author_mail=? and author_password=? "
 				+ "then 'true' else 'false end from UserDataAuthor";
 		//条件にあう列数(0か1)が代入される
-		int coincidence = this.jdbcTemplate.update(sql,loginpass.getMailAdsress(),loginpass.getPassword());
+		int coincidence = this.jdbcTemplate.update(sql,loginpass.getMailAdress(),loginpass.getPassword());
 		if(coincidence >0) {
 			return true;
 		}else {

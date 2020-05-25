@@ -2,7 +2,7 @@ package com.sunseer.groupB.pojo;
 
 public class Loginpass {
 	private int id;
-	private String mailAdsress;
+	private String mailAdress;
 	private String password;
 
 	public int getId() {
@@ -11,11 +11,11 @@ public class Loginpass {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getMailAdsress() {
-		return mailAdsress;
+	public String getMailAdress() {
+		return mailAdress;
 	}
 	public void setMailAdsress(String mailAdsress) {
-		this.mailAdsress = mailAdsress;
+		this.mailAdress = mailAdsress;
 	}
 	public String getPassword() {
 		return password;

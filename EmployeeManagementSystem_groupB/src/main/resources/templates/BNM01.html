@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="sample.css" />
+<link rel="stylesheet" type="text/css" href="default.css" />
     <title>新規社員情報登録画面</title>
     <meta name="description" content="新人情報登録画面です。">
 <style type="text/css">
@@ -17,25 +17,29 @@
         -webkit-text-align:justify;
         -moz-text-align: justify;
     }
+.auto-style1 {
+	margin-top: 48px;
+}
 </style>
 </head>
-<body> 
+<body>
+<div class="form-wrapper">
     <center>
-        <table class="row">
-            <h1>
-                新規社員登録
-            </h1>
+        <table class="auto-style1">
+                <br>
+                <center><p style="font-size: x-large">新規社員登録</p></font></center>
+                <br>
             <tr>
                  <td> <span>氏名（漢字）※</span>
-                    姓:<input type="name" style="width:200px" required>
-                    名:<input type="name" style="width:200px" required>
+                    氏:<input type="name" style="width:180px" required>
+                    　名:<input type="name" style="width:180px" required>
                  </td>
             </tr>
             <tr>
                  <td>
                      <span>カタカナ※</span>
-                    セイ:<input type="name" style="width:180px" required>
-                    メイ:<input type="name" style="width:187px" required>
+                    シ:<input type="name" style="width:180px" required>
+                    メイ:<input type="name" style="width:180px" required>
                  </td>
             </tr>
             <tr>
@@ -56,18 +60,19 @@
             <tr>
                 <td>
                     <span>生年月日※</span>
-                　 　<input type="date" style="width:165px" required>
-                </td>
-            </tr>
-            <tr>
-                <td style="height: 26px">
-                    <span>メールアドレス※ </span>
-                     <input type="tel" style="width:200px" required>
+                    <input type="date" style="width:200px" required>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <span>電話番号※</span>&nbsp;
+                    <span>電話番号※</span>
+                     <input type="tel" style="width:200px" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <span>メールアドレス※</span>
                     <input type="text" style="width:200px" required>
                 </td>
             </tr>
@@ -97,11 +102,24 @@
                </td>
             </tr>
             </table>
-            <p>
-                <input id=cancel type="button" value= "キャンセル" onclick="location.href='index.html';" style="font-size: medium"> </a>
-                <input id=log type="submit"value="　確 認　" onclick="location.href='BNM02.html';" style="font-size: medium"> </a>
-            </p>
-        </div>
-    </center>
-</body>
-</html>
+                　<div class="button-panel" style="width: 100%" align="center">
+                 <center><input type="submit" class="button" title="Sign In" value="キャンセル" style="width: 31%" align="center" onclick="location.href='index.html'"></input>
+                    <input type="submit" class="button" title="Sign In" value="確認" style="width: 31%" align="center" onclick="location.href='BNM02.html'"></input></center>
+                      
+                　　　　　</div>
+
+		
+            </input>
+            　　　　　</div>
+                
+            
+            </form>
+            <br>
+            <hr>
+                  <center><div> <a>〒110-0015 東京東上野台東市6丁目−2−番1号MPR東上野ビル10F</a></div></center>
+                  <center><div>   <span style="width: 227px">© 2020 Sunseer corporation</span> </div></center>
+                  
+            </div>
+            </body>
+            </html>
+            
