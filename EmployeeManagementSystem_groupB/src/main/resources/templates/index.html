@@ -1,0 +1,435 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="sample.css" />
+<title>グループB管理システムトップ画面</title>
+<style type="text/css">
+.auto-style5 {
+	font-size: small;
+}
+.auto-style6 {
+	margin-left: 0px;
+}
+.auto-style7 {
+	font-size: x-large;
+}
+.auto-style9 {
+	font-size: medium;
+	font-weight: normal;
+}
+.auto-style10 {
+	font-weight: normal;
+}
+.auto-style11 {
+	font-size: large;
+}
+.auto-style12 {
+	font-weight: normal;
+	border-left-color: #A0A0A0;
+	border-right-color: #C0C0C0;
+	border-top-color: #A0A0A0;
+	border-bottom-color: #C0C0C0;
+}
+</style>
+</head>
+<body>
+<div id="pagebody" style="width: 1429px">
+
+	<!-- ヘッダ -->
+	<div id="header" style="height: 71px"><h1><a href="index.dwt">グループB管理社員システム</a>
+	<a href="B0.html">　　　　　　　　　　　　　　　　　　　　　　　　　　　<span class="auto-style11">ログアウト</span></span></a><span class="auto-style7"></h1></div>
+	
+	<div id="submenu" style="width: 303px; height: 497px;">
+		<div id="submenu_header" text-align: "center" style="height: 22px">
+		<div id="submenu_header" class="auto-style10">
+			<a href="BNM01.html" style="font-size: x-large">新規社員登録</a></div>
+		<table class="research1" style="text-align:left">
+        <tr style="width: 170px;" >
+        <br>
+		<p style="font-size: x-large; font-weight: normal;">検　　索</p>
+
+        </tr>
+    </table>
+    <table class="research1" style="text-align:left">
+        <tr style="width: 170px;" >
+            <th align="right">氏：</th>
+            <td><input type="text"  name="user_firstname"  value="" required style="width:100px"></td>
+            <th align="right">名：</th>
+            <td><input type="text"  name="user_lastname"  value="" required style="width:100px"></td>
+        </tr>
+        <tr style="width: 170px;" >
+            <th class="auto-style5">シ：</th>
+            <td><input type="text"  name="user_firstkata"  value="" required style="width:100px"></td>
+            <th class="auto-style5">メイ：</th>
+            <td><input type="text"  name="user_lastkata"  value="" required style="width:100px"></td>
+        </tr>
+    </table>
+    <table class="research2" style="text-align:left; height: 291px;">
+        <tr>
+            <th>性別：</th>
+            <td style="width: 137px"><input type="radio"  name="user_gender"  value="male"> 男性　　
+                <input type="radio"  name="user_gender"  value="female"> 女性</td>
+        </tr>
+        <tr>
+            <th>部署：</th>
+            <td style="width: 137px"><input type="text"  name="department_name"  value="" required></td>
+        </tr>
+        <tr>
+            <th>生年月日：</th>
+            <td style="width: 137px"><input type="text"  name="user_birth"  value="" required></td>
+        </tr>
+        <tr>
+            <th>メールアドレス：</th>
+            <td style="width: 137px"><input type="text"  name="user_mail"  value="" required></td>
+        </tr>
+        <tr>
+            <th>電話番号：</th>
+            <td style="width: 137px"><input type="text"  name="user_tele"  value="" required></td>
+        </tr>
+        <tr>
+            <th>住所：</th>
+            <td style="width: 137px"><input type="text"  name="user_address"  value="" required></td>
+        </tr>
+        <tr>
+            <th>最終学歴：</th>
+            <td style="width: 137px"><input type="text"  name="user_education"  value="" required></td>
+        </tr>
+                <tr>
+            <th>特技：</th>
+            <td style="width: 137px"><input type="text"  name="user_education"  value="" required></td>
+        </tr>
+    </table>
+    <table class="research_botton" align="right">
+        <tr>
+            <td>
+                <input type="reset" value="リセット" required style="width:100px">
+                <input type="button" value="検索" required style="width:100px">
+            </td>
+        </tr>
+    </table>
+　　
+
+		</div>
+		</form>	
+	</div>
+	<!-- コンテンツ（中央と右の2カラム） -->
+	<div id="content" style="height: 513px; width: 1069px;" class="auto-style6">
+		<!-- ニュース（中央カラム） -->
+		<div id="全員社員">
+			<h2>&nbsp;&nbsp;&nbsp;社員全員一覧</h2>
+		</div>
+		</span>
+		<table border="2" style="width: 1015px; height: 38px; font-size: medium;"align="center">
+		<th style="width: 70px" class="auto-style9">並び替え<span class="auto-style7"><th style="width: 74px; height: 26px" class="auto-style9">
+			氏名▲▼<th style="height: 26px;" class="auto-style9">
+			性別▲▼<th style="width: 75px; height: 26px;" class="auto-style9">
+			部署▲▼<th style="width: 124px; height: 26px;" class="auto-style9">生年月日▲▼<th style="width: 152px; height: 26px;" class="auto-style9">
+			メールアドレス▲▼<th style="width: 102px; height: 26px;" class="auto-style9">
+			電話番号▲▼<th style="width: 96px; height: 26px;" class="auto-style10">
+			住所▲▼<th style="height: 26px;"><span class="auto-style12">学歴▲▼</span></td><th style="height: 26px;" class="auto-style10">特技</td>▲▼</table>
+		
+    <body>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="sakai.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/ueto.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/kagawa.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/oikawa.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/kento.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/kitaoji.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/imada.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="images/taro.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="sakai.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+       <table border="2" style="width: 1015px">
+            <tbody>
+                <tr>
+                    <td rowspan="5" width="20%" class="text-center">
+                    <img src="sakai.jpg" alt="" height="131" width="195"></td>
+                    <td width="35%">氏名：石丸理穂</td>
+                    <td width="35%">性別：女性</td>
+                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+					<input name="Button1" type="button" value="修　正" style="width: 85px"></a>
+                </tr>
+                <tr>
+                    <td width="35%">フリガナ：イシマル　リホ</td>
+                    <td width="35%">部署：○○○○○○○○部署</td>
+                    <tr>
+                    <td width="35%">生年月日：1997/09/13</td>
+                    <td width="35%">メールアドレス：mail@sample.com</td>
+                </tr>
+                <tr>
+                    <td width="35%">電話番号:090-1234-5678</td>
+                    <td width="35%">住所：東京都中央区1-1-1</td>
+                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
+					<button style="width: 85px">削除</button></td>
+                </tr>
+                <tr>
+                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
+                    <td width="35%">特技:一輪車</td>
+                </tr>
+            </tbody>
+        </table>
+
+		<br>
+		<hr>
+		<center><div> <a>〒110-0015 東京東上野台東市6丁目−2−番1号MPR東上野ビル10F</a></div></center>
+		<center><div>  <span>© 2020 Sunseer corporation</span> </div></center>
+
+
+
+</div>
+</body>
+</html>
