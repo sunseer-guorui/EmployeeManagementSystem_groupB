@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GroupBApplication {
+public class groupBApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GroupBApplication.class, args);
+		SpringApplication.run(groupBApplication.class, args);
 	}
 
 }

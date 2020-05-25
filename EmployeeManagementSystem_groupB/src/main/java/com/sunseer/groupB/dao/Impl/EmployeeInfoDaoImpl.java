@@ -17,21 +17,16 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 	//データの追加
 	@Override
 	public void InsertEmployeeInfo(EmployeeInfo employeeInfo) {
-		// TODO 自動生成されたメソッド・スタブ
-		
+		String sql = "insert into userdata(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql,employeeInfo.getId(),employeeInfo.getFirstname(),employeeInfo.getLastname()
+				,employeeInfo.getFirstkata(),employeeInfo.getLastkata(),employeeInfo.getGender(),employeeInfo.getDepart()
+				,employeeInfo.getBirthday(),employeeInfo.getPhoneNumber(),employeeInfo.getAddress()
+				,employeeInfo.getLastEducational(),employeeInfo.getSpecialSkill(),employeeInfo.getFacePhoto());
 	}
 
-	//データの検索
+	//データの検索&取得
 	@Override
 	public List<EmployeeInfo> SelectEmployeeInfo(EmployeeInfo employee) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	//全データの取得
-	@Override
-	public List<EmployeeInfo> SelectEmployeeInfoAll(EmployeeInfo employeeInfo) {
-		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 

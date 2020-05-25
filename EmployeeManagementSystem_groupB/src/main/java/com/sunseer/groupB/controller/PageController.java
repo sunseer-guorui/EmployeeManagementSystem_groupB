@@ -1,7 +1,6 @@
 package com.sunseer.groupB.controller;
 
-import java.io.IOException;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -10,20 +9,20 @@ import com.sunseer.groupB.service.LoginpassService;
 
 @Controller
 public class PageController {
-
+	@Autowired
 	private LoginpassService loginpassService;
 
 	@PostMapping("/B0")
 	public String Login(Loginpass loginpass) {
 		try {
 			if(this.loginpassService.FindLoginpass(loginpass)) {
-				return "";
+				return "newindex";
 			}else {
-				return "";
+				return "B0";
 			}
 		}
-		catch(IOException e) {
-			return "";
+		catch(Exception e) {
+			return "B0";
 		}
 	}
 }

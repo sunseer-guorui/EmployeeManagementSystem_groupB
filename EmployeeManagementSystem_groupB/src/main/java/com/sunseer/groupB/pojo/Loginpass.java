@@ -14,7 +14,7 @@ public class Loginpass {
 	public String getMailAdress() {
 		return mailAdress;
 	}
-	public void setMailAdsress(String mailAdsress) {
+	public void setMailAdress(String mailAdsress) {
 		this.mailAdress = mailAdsress;
 	}
 	public String getPassword() {
