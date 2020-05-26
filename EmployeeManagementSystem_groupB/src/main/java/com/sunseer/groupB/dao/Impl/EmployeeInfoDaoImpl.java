@@ -37,8 +37,8 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 	public List<EmployeeInfo> SelectEmployeeInfoAll() {
 		String sql = "select * from userdata";
 		RowMapper<EmployeeInfo> rowMapper = new BeanPropertyRowMapper(EmployeeInfo.class);
-		List<EmployeeInfo> eis = jdbcTemplate.query(sql,rowMapper);
-		return eis;
+		List<EmployeeInfo> employeeInfo = jdbcTemplate.query(sql,rowMapper);
+		return employeeInfo;
 	}
 
 	//データの上書き

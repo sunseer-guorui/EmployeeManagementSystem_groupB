@@ -2,6 +2,7 @@ package com.sunseer.groupB.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sunseer.groupB.dao.EmployeeInfoDao;
@@ -10,6 +11,7 @@ import com.sunseer.groupB.service.EmployeeInfoService;
 
 @Service
 public class EmployeeInfoServiceImpl implements EmployeeInfoService {
+	@Autowired
 	private EmployeeInfoDao employeeInfoDao;
 
 	@Override

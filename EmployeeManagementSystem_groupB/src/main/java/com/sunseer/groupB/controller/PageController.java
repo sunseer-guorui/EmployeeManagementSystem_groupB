@@ -41,7 +41,7 @@ public class PageController {
 				list = this.employeeInfoService.FindEmployeeInfoAll();
 				model.addAttribute("list",list);
 
-				return "showAll";
+				return "newindex";
 			}else {
 				System.out.println("ログイン内容が正しくありません");
 				return "B0";

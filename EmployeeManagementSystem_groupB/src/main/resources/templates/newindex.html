@@ -7,7 +7,7 @@
         <title>社員管理システム</title>
 
         <link rel="stylesheet" type="text/css" href="../css/newindex.css" />
-        <script src="./js/all.min.js"></script>
+        <!--<script src="./js/all.min.js"></script>-->
         <link rel="icon" href="favicon.ico">
         <style type="text/css">
         </style>
@@ -37,59 +37,58 @@
                 <!-- ▼検索ボックス -->
                 <div class="searchbox">
                     <h2>検索</h2>
-                    <form th:action="@{/groupB/newindex}" method="post" th:object="${employeeInfo}">
+                    <form th:action="@{/groupB/newindex}" method="post">
                         <table class="research1" style="text-align:left">
                             <tr style="width: 170px;" >
                                 <th align="right">氏：</th>
-                                <td><input type="text"  name="user_firstname" th:field="*{user_firstname}" value="" style="width:100px"></td>
+                                <td><input type="text" value="" style="width:100px"></td>
                                 <th align="right">名：</th>
-                                <td><input type="text"  name="user_lastname" th:field="*{user_lastname}" value="" style="width:100px"></td>
+                                <td><input type="text" value="" style="width:100px"></td>
                             </tr>
                             <tr style="width: 170px;" >
                                 <th class="auto-style5">シ：</th>
-                                <td><input type="text"  name="user_firstkata" th:field="*{user_firstkata}" value="" style="width:100px"></td>
+                                <td><input type="text" value="" style="width:100px"></td>
                                 <th class="auto-style5"><font size="2">メイ:</font></th>
-                                <td><input type="text"  name="user_lastkata" th:field="*{user_lastkata}" value="" style="width:100px"></td>
+                                <td><input type="text" value="" style="width:100px"></td>
                             </tr>
                         </table>
                         <table class="research2" style="text-align:left; height: 291px;">
                             <tr>
                                 <th >性別：</th>
-                                <td style="width: 137px"><input type="radio" name="user_gender" th:field="*{user_gender}" value="male"> 男性　　
-                                    <input type="radio" name="user_gender" th:field="*{user_gender}" value="female"> 女性</td>
+                                <td style="width: 137px"><input type="radio" value="male"> 男性　　
+                                <input type="radio" value="female"> 女性</td>
                             </tr>
                             <tr>
                                 <th>部署：</th>
-                                <td style="width: 137px"><input type="text"  name="department_name" th:field="*{department_name}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
                             <tr>
                                 <th>生年月日：</th>
-                                <td style="width: 137px"><input type="text"  name="user_birth" th:field="*{user_birth}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
                             <tr>
                                 <th>ﾒｰﾙｱﾄﾞﾚｽ：</th>
-                                <td style="width: 137px"><input type="text"  name="user_mail" th:field="*{user_mail}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
                             <tr>
                                 <th>電話番号：</th>
-                                <td style="width: 137px"><input type="text"  name="user_tele" th:field="*{user_tele}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
                             <tr>
                                 <th>住所：</th>
-                                <td style="width: 137px"><input type="text"  name="user_address" th:field="*{user_address}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
                             <tr>
                                 <th>最終学歴：</th>
-                                <td style="width: 137px"><input type="text"  name="user_education" th:field="*{user_education}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
-                                    <tr>
+                            <tr>
                                 <th>特技：</th>
-                                <td style="width: 137px"><input type="text"  name="user_spcial" th:field="*{user_spcial}" value=""></td>
+                                <td style="width: 137px"><input type="text" value=""></td>
                             </tr>
                         </table>
                         <table class="research_botton" align="right">
                             <tr>
-                                <br>
                                 <td>
                                 <div class="button-reset">
                                     <button type="reset" value="リセット" name="reset" class="button"><i class="fas fa-redo-alt colorpink"></i> リセット</button>
@@ -131,7 +130,6 @@
                         <div id="全員社員">
                             <h2>社員一覧</h2>
                         </div>
-
                         <!-- <table border="2" style="width: 900px; height: 38px; font-size: medium;" align="">
                         <th style="width: 70px" class="auto-style9">並び替え<span class="auto-style7"><th style="width: 74px; height: 26px" class="auto-style9">
                             氏名▲▼<th style="height: 26px;" class="auto-style9">
@@ -141,49 +139,51 @@
                             電話番号▲▼<th style="width: 96px; height: 26px;" class="auto-style10">
                             住所▲▼<th style="height: 26px;"><span class="auto-style12">学歴▲▼</span></td><th style="height: 26px;" class="auto-style10">特技</td>▲▼</table>
  -->
-                  <div class="sortbox">
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 氏名</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 性別</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 生年月日</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 部署</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> ﾒｰﾙｱﾄﾞﾚｽ</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 電話番号</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 住所</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 学歴</button></td>
-                    <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 特技</button></td>
-                  </div>
+                       <div class="sortbox">
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 氏名</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 性別</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 生年月日</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 部署</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> ﾒｰﾙｱﾄﾞﾚｽ</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 電話番号</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 住所</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 学歴</button></td>
+                        <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 特技</button></td>
+                        </div>
 
-
-                        <table border="2" style="width: 900px" th:each="e : ${list}">
+                        <table border="2" style="width: 900px">
                             <tbody>
-                                <tr>
-                                    <td rowspan="5" width="20%" class="text-center">
-                                    <img src="sakai.jpg" alt="" height="131" width="195"></td>
-                                    <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
-                                    <td width="35%"th:text="|性別:${e.user_gender}|"></td>
-                                    <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
-                                        <button type="button"  class="button"><i class="fas fa-wrench colorpink"></i> 修正</button></td>
-                                </tr>
-                                <tr>
-                                    <td width="35%" th:text="|フリガナ:${e.user_firstkata} ${e.user_lastkata}|"></td>
-                                    <td width="35%" th:text="|部署:${e.user_gender}|"></td>
+                                <span th:each="e : ${list}">
                                     <tr>
-                                    <td width="35%" th:text="|生年月日:${e.user_birth}|"></td>
-                                    <td width="35%" th:text="|メールアドレス:${e.user_mail}|"></td>
-                                </tr>
-                                <tr>
-                                    <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
-                                    <td width="35%" th:text="|住所:${e.user_address}|"></td>
-                                    <td rowspan="2" class="text-center" style="width: 10%" align="center">
-                                    <button style=""  class="button"><i class="fas fa-trash-alt colorpink"></i> 削除</button></td>
-                                </tr>
-                                <tr>
-                                    <td width="35%" th:text="|学歴:${e.user_education}|"></td>
-                                    <td width="35%" th:text="|特技:${e.user_spcial}|"></td>
-                                </tr>
-                            </tbody>
+                                        <td rowspan="5" width="20%" class="text-center">
+                                        <img alt="" height="131" width="195"></td>
+                                        <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
+                                        <td width="35%"th:text="|性別:${e.user_gender}|"></td>
+                                        <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+                                        <button type="button"  class="button"><i class="fas fa-wrench colorpink"></i> 修正</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="35%" th:text="|フリガナ:${e.user_firstkata} ${e.user_lastkata}|"></td>
+                                        <td width="35%" th:text="|部署:${e.user_gender}|"></td>
+                                        <tr>
+                                            <td width="35%" th:text="|生年月日:${e.user_birth}|"></td>
+                                            <td width="35%" th:text="|メールアドレス:${e.user_mail}|"></td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
+                                        <td width="35%" th:text="|住所:${e.user_address}|"></td>
+                                        <td rowspan="2" class="text-center" style="width: 10%" align="center">
+                                        <button class="button"><i class="fas fa-trash-alt colorpink"></i> 削除</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="35%" th:text="|学歴:${e.user_education}|"></td>
+                                        <td width="35%" th:text="|特技:${e.user_spcial}|"></td>
+                                    </tr>
+                                </span>
+                           </tbody>
                         </table>
-                    </div>
+                   </div>
                 </div>
             </div>
 
