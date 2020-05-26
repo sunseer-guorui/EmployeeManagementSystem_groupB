@@ -14,14 +14,18 @@ public class EmployeeInfoServiceImpl implements EmployeeInfoService {
 
 	@Override
 	public void AddEmployeeInfo(EmployeeInfo employeeInfo) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		employeeInfoDao.InsertEmployeeInfo(employeeInfo);
 	}
 
 	@Override
 	public List<EmployeeInfo> FindEmployeeInfo(EmployeeInfo employeeInfo) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
+	}
+
+	@Override
+	public List<EmployeeInfo> FindEmployeeInfoAll() {
+		return employeeInfoDao.SelectEmployeeInfoAll();
 	}
 
 	@Override
@@ -41,6 +45,5 @@ public class EmployeeInfoServiceImpl implements EmployeeInfoService {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
-
 
 }

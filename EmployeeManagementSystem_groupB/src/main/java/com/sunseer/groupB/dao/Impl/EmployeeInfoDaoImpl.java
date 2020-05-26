@@ -3,7 +3,9 @@ package com.sunseer.groupB.dao.Impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.sunseer.groupB.dao.EmployeeInfoDao;
@@ -18,16 +20,25 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 	@Override
 	public void InsertEmployeeInfo(EmployeeInfo employeeInfo) {
 		String sql = "insert into userdata(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		jdbcTemplate.update(sql,employeeInfo.getId(),employeeInfo.getFirstname(),employeeInfo.getLastname()
-				,employeeInfo.getFirstkata(),employeeInfo.getLastkata(),employeeInfo.getGender(),employeeInfo.getDepart()
-				,employeeInfo.getBirthday(),employeeInfo.getPhoneNumber(),employeeInfo.getAddress()
-				,employeeInfo.getLastEducational(),employeeInfo.getSpecialSkill(),employeeInfo.getFacePhoto());
+		jdbcTemplate.update(sql,employeeInfo.getUser_id(),employeeInfo.getUser_firstname(),employeeInfo.getUser_lastname()
+				,employeeInfo.getUser_firstkata(),employeeInfo.getUser_lastkata(),employeeInfo.getUser_gender(),employeeInfo.getDepart_name()
+				,employeeInfo.getUser_birth(),employeeInfo.getUser_tele(),employeeInfo.getUser_mail(),employeeInfo.getUser_address()
+				,employeeInfo.getUser_Educational(),employeeInfo.getUser_special(),employeeInfo.getUser_image());
 	}
 
 	//データの検索&取得
 	@Override
 	public List<EmployeeInfo> SelectEmployeeInfo(EmployeeInfo employee) {
 		return null;
+
+	}
+
+	//データの全件取得
+	public List<EmployeeInfo> SelectEmployeeInfoAll() {
+		String sql = "select * from userdata";
+		RowMapper<EmployeeInfo> rowMapper = new BeanPropertyRowMapper(EmployeeInfo.class);
+		List<EmployeeInfo> eis = jdbcTemplate.query(sql,rowMapper);
+		return eis;
 	}
 
 	//データの上書き

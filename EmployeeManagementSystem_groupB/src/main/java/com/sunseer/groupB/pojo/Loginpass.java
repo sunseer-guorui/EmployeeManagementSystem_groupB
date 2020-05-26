@@ -25,9 +25,8 @@ public class Loginpass {
 		this.author_password = author_password;
 	}
 	public boolean equals(Loginpass lp) {
-		System.out.println(lp.getAuthor_mail());
-		System.out.println(lp.getAuthor_password());
-		return this.getAuthor_mail() == lp.getAuthor_mail()
-				&& this.getAuthor_password() == lp.getAuthor_password();
+
+		return this.getAuthor_mail().equals(lp.getAuthor_mail())
+				&& this.getAuthor_password().equals(lp.getAuthor_password());
 	}
 }

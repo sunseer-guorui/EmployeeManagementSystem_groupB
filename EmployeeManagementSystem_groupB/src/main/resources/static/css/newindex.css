@@ -121,14 +121,14 @@ input.button:hover .colorpink,button.button:hover .colorpink{
  .whitebox{
     margin: 5em auto 0 auto;
     padding: 20px;
-    width: 1412px;
+    width: 100%;
     /* height: 1000px; */
     background-color: white;
     display: flex;
 }
 .searchbox{
     /* display: inline-block; */
-    width: 303px;
+    width: 360px;
     /* border: 1px solid black; */
     /* height: 700px; */
     /* padding: 1em; */
@@ -139,6 +139,11 @@ input.button:hover .colorpink,button.button:hover .colorpink{
     /* border: 1px solid black; */
     /* height: 700px; */
     /* padding: 1em; */
+}
+
+.sortbox{
+    padding-bottom: 13px;
+    width: 100%;
 }
 
 .searchbox h2, .listbox h2{
@@ -177,4 +182,75 @@ div.form-class{
 /*ヘッダー*/
 hr.footer{
     margin-top: 3em;
+}
+
+/*default.css*/
+
+
+.form-wrapper {
+    background: #fafafa;
+    margin: 3em auto;
+    padding: 0 1em;
+    max-width: 600px;
+  }
+
+  .form-BNM02 {
+    background: #fafafa;
+    margin: 3em auto;
+    padding: 0 1em;
+    max-width: 1050px;
+  }
+
+  .form-BME02 {
+    background: #fafafa;
+    margin: 3em auto;
+    padding: 0 1em;
+    max-width: 1050px;
+  }
+
+  .form-index {
+    background: #fafafa;
+    margin: 3em auto;
+    padding: 0 1em;
+    max-width: 1020px;
+  }
+
+
+
+
+body {
+    background: #e9e9e9;
+    color: #5e5e5e;
+    font: 400 87.5%/1.5em 'Open Sans', sans-serif;
+  }
+
+  .button-panel {
+    margin: 2em 0 0;
+    width: 100%;
+  }
+  
+  .button-panel .button {
+    background: #f16272;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background: #ee3e52;
+  }
+
+  div.footer{
+    margin-top: 3em;
+    height: 600px; text-align: center;
+    background-color: #e9e9e9;
+    background-repeat: no-repeat;
 }

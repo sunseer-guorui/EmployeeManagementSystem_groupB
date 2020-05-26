@@ -19,10 +19,10 @@ public class LoginpassDaoImpl implements LoginpassDao {
 	public boolean SelectLoginpass(Loginpass loginpass) {
 		String sql = "select * from userdataauthor where author_mail=?";
 		RowMapper<Loginpass> rowMapper = new BeanPropertyRowMapper<Loginpass>(Loginpass.class);
-		//条件にあう列数(0か1)が代入される
+		//同じメールアドレスのデータを取得
 		Loginpass matchLoginpass = jdbcTemplate.queryForObject
 				(sql, rowMapper,loginpass.getAuthor_mail());
-		System.out.println(loginpass.equals(matchLoginpass));
+		
 		return loginpass.equals(matchLoginpass);
 	}
 
