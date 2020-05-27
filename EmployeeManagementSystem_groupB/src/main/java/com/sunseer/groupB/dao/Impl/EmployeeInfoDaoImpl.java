@@ -19,17 +19,21 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 	//データの追加
 	@Override
 	public void InsertEmployeeInfo(EmployeeInfo employeeInfo) {
-		String sql = "insert into userdata(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into userdata (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql,employeeInfo.getUser_id(),employeeInfo.getUser_firstname(),employeeInfo.getUser_lastname()
 				,employeeInfo.getUser_firstkata(),employeeInfo.getUser_lastkata(),employeeInfo.getUser_gender(),employeeInfo.getDepart_name()
 				,employeeInfo.getUser_birth(),employeeInfo.getUser_tele(),employeeInfo.getUser_mail(),employeeInfo.getUser_address()
-				,employeeInfo.getUser_Educational(),employeeInfo.getUser_special(),employeeInfo.getUser_image());
+				,employeeInfo.getUser_education(),employeeInfo.getUser_special(),employeeInfo.getUser_image());
 	}
 
 	//データの検索&取得
 	@Override
-	public List<EmployeeInfo> SelectEmployeeInfo(EmployeeInfo employee) {
-		return null;
+	public List<EmployeeInfo> SelectEmployeeInfo(EmployeeInfo employeeInfo) {
+		String sql = "select * from userdata " + employeeInfo.makeSearchSql();
+
+		RowMapper<EmployeeInfo> rowMapper = new BeanPropertyRowMapper(EmployeeInfo.class);
+		List<EmployeeInfo> results = jdbcTemplate.query(sql,rowMapper);
+		return results;
 
 	}
 
@@ -37,8 +41,8 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 	public List<EmployeeInfo> SelectEmployeeInfoAll() {
 		String sql = "select * from userdata";
 		RowMapper<EmployeeInfo> rowMapper = new BeanPropertyRowMapper(EmployeeInfo.class);
-		List<EmployeeInfo> employeeInfo = jdbcTemplate.query(sql,rowMapper);
-		return employeeInfo;
+		List<EmployeeInfo> results = jdbcTemplate.query(sql,rowMapper);
+		return results;
 	}
 
 	//データの上書き

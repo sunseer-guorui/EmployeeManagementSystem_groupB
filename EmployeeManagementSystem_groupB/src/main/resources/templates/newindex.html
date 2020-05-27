@@ -37,54 +37,54 @@
                 <!-- ▼検索ボックス -->
                 <div class="searchbox">
                     <h2>検索</h2>
-                    <form th:action="@{/groupB/newindex}" method="post">
+                    <form th:action="@{/groupB/newindex}" method="post" th:object="${employeeInfo}">
                         <table class="research1" style="text-align:left">
                             <tr style="width: 170px;" >
                                 <th align="right">氏：</th>
-                                <td><input type="text" value="" style="width:100px"></td>
+                                <td><input type="text" value="" name="user_firstname" style="width:100px"></td>
                                 <th align="right">名：</th>
-                                <td><input type="text" value="" style="width:100px"></td>
+                                <td><input type="text" value="" name="user_lastname" style="width:100px"></td>
                             </tr>
                             <tr style="width: 170px;" >
                                 <th class="auto-style5">シ：</th>
-                                <td><input type="text" value="" style="width:100px"></td>
+                                <td><input type="text" value="" name="user_firstkata" style="width:100px"></td>
                                 <th class="auto-style5"><font size="2">メイ:</font></th>
-                                <td><input type="text" value="" style="width:100px"></td>
+                                <td><input type="text" value="" name="user_lastkata" style="width:100px"></td>
                             </tr>
                         </table>
                         <table class="research2" style="text-align:left; height: 291px;">
                             <tr>
                                 <th >性別：</th>
-                                <td style="width: 137px"><input type="radio" value="male"> 男性　　
-                                <input type="radio" value="female"> 女性</td>
+                                <td style="width: 137px"><input type="radio" value="男性" name="user_gender"> 男性　　
+                                <input type="radio" value="女性" name="user_gender"> 女性</td>
                             </tr>
                             <tr>
                                 <th>部署：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="depart_name"></td>
                             </tr>
                             <tr>
                                 <th>生年月日：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="user_birth"></td>
                             </tr>
                             <tr>
                                 <th>ﾒｰﾙｱﾄﾞﾚｽ：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="user_mail"></td>
                             </tr>
                             <tr>
                                 <th>電話番号：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="user_tele"></td>
                             </tr>
                             <tr>
                                 <th>住所：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="user_address"></td>
                             </tr>
                             <tr>
                                 <th>最終学歴：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="user_education"></td>
                             </tr>
                             <tr>
                                 <th>特技：</th>
-                                <td style="width: 137px"><input type="text" value=""></td>
+                                <td style="width: 137px"><input type="text" value="" name="user_spcial"></td>
                             </tr>
                         </table>
                         <table class="research_botton" align="right">
@@ -150,13 +150,12 @@
                         <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 学歴</button></td>
                         <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 特技</button></td>
                         </div>
-
-                        <table border="2" style="width: 900px">
-                            <tbody>
-                                <span th:each="e : ${list}">
+						<span th:each="e : ${list}">
+	                        <table border="2" style="width: 900px">
+	                            <tbody>
                                     <tr>
                                         <td rowspan="5" width="20%" class="text-center">
-                                        <img alt="" height="131" width="195"></td>
+                                        <img alt="" height="131" width="195"></td><!--写真追加部分-->
                                         <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
                                         <td width="35%"th:text="|性別:${e.user_gender}|"></td>
                                         <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
@@ -164,7 +163,7 @@
                                     </tr>
                                     <tr>
                                         <td width="35%" th:text="|フリガナ:${e.user_firstkata} ${e.user_lastkata}|"></td>
-                                        <td width="35%" th:text="|部署:${e.user_gender}|"></td>
+                                        <td width="35%" th:text="|部署:${e.depart_name}|"></td>
                                         <tr>
                                             <td width="35%" th:text="|生年月日:${e.user_birth}|"></td>
                                             <td width="35%" th:text="|メールアドレス:${e.user_mail}|"></td>
@@ -178,11 +177,11 @@
                                     </tr>
                                     <tr>
                                         <td width="35%" th:text="|学歴:${e.user_education}|"></td>
-                                        <td width="35%" th:text="|特技:${e.user_spcial}|"></td>
+                                        <td width="35%" th:text="|特技:${e.user_special}|"></td>
                                     </tr>
-                                </span>
-                           </tbody>
-                        </table>
+	                           </tbody>
+	                        </table>
+                         </span>
                    </div>
                 </div>
             </div>

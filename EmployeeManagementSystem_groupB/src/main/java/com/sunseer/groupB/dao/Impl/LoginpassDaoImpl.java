@@ -22,7 +22,7 @@ public class LoginpassDaoImpl implements LoginpassDao {
 		//同じメールアドレスのデータを取得
 		Loginpass matchLoginpass = jdbcTemplate.queryForObject
 				(sql, rowMapper,loginpass.getAuthor_mail());
-		
+
 		return loginpass.equals(matchLoginpass);
 	}
 

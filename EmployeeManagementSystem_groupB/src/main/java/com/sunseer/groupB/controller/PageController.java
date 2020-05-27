@@ -2,10 +2,14 @@ package com.sunseer.groupB.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -54,32 +58,23 @@ public class PageController {
 		}
 	}
 
-	//一覧の表示
-//	@GetMapping("/showAll")
-//	public String showEmployeeAll(Model model) {
-//		List<EmployeeInfo> list = null;
-//		try {
-//			list = this.employeeInfoService.FindEmployeeInfoAll();
-//			model.addAttribute("list",list);
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//			return "B0";
-//		}
-//		return "newindex";
-//	}
-
-//	//検索結果の表示
-//	@PostMapping(value = "/newindex",params = "search")
-//	public String SearchEmployee(@ModelAttribute("employeeInfo") EmployeeInfo employeeInfo,Model model) {
-//		List<EmployeeInfo> list = null;
-//		try {
-//			list = this.employeeInfoService.FindEmployeeInfo(employeeInfo);
-//			model.addAttribute("list",list);
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//			return "B0";
-//		}
-//		return "newindex";
-//	}
-	//一覧画面へ移動するとき、検索条件を同時に送信する。
+	@GetMapping("/newindex")
+	public String ShowAllEmployee() {
+		return "newindex";
+	}
+	
+	//検索結果の表示
+	@PostMapping(value = "/newindex",params = "search")
+	public String SearchEmployee(@Valid @ModelAttribute("employeeInfo") EmployeeInfo employeeInfo
+			,BindingResult bindingResult,Model model) {
+		List<EmployeeInfo> list = null;
+		try {
+			list = this.employeeInfoService.FindEmployeeInfo(employeeInfo);
+			model.addAttribute("list",list);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return "B0";
+		}
+		return "newindex";
+	}
 }

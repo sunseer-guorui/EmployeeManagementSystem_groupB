@@ -21,8 +21,7 @@ public class EmployeeInfoServiceImpl implements EmployeeInfoService {
 
 	@Override
 	public List<EmployeeInfo> FindEmployeeInfo(EmployeeInfo employeeInfo) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return employeeInfoDao.SelectEmployeeInfo(employeeInfo);
 	}
 
 	@Override
