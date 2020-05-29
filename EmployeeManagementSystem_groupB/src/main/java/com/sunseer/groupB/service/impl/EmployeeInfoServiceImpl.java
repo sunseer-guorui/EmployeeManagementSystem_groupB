@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.sunseer.groupB.dao.EmployeeInfoDao;
 import com.sunseer.groupB.pojo.EmployeeInfo;
+import com.sunseer.groupB.pojo.EmployeeInfoPhoto;
 import com.sunseer.groupB.service.EmployeeInfoService;
 
 @Service
@@ -15,17 +16,12 @@ public class EmployeeInfoServiceImpl implements EmployeeInfoService {
 	private EmployeeInfoDao employeeInfoDao;
 
 	@Override
-	public void AddEmployeeInfo(EmployeeInfo employeeInfo) {
-		employeeInfoDao.InsertEmployeeInfo(employeeInfo);
-	}
-
-	@Override
-	public List<EmployeeInfo> FindEmployeeInfo(EmployeeInfo employeeInfo) {
+	public List<EmployeeInfoPhoto> FindEmployeeInfo(EmployeeInfoPhoto employeeInfo) {
 		return employeeInfoDao.SelectEmployeeInfo(employeeInfo);
 	}
 
 	@Override
-	public List<EmployeeInfo> FindEmployeeInfoAll() {
+	public List<EmployeeInfoPhoto> FindEmployeeInfoAll() {
 		return employeeInfoDao.SelectEmployeeInfoAll();
 	}
 
@@ -37,14 +33,22 @@ public class EmployeeInfoServiceImpl implements EmployeeInfoService {
 
 	@Override
 	public void DeleteEmployeeInfoById(int id) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		employeeInfoDao.DeleteEmployeeInfo(id);
 	}
 
 	@Override
-	public List<EmployeeInfo> SortEmployeeInfo(String order, boolean asc) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+	public EmployeeInfoPhoto findUserById(Integer id) {
+		return this.employeeInfoDao.SelectEmployeeInfoId(id);
+	}
+
+	@Override
+	public void modifyUser(EmployeeInfo users) {
+		this.employeeInfoDao.UpdateEmployeeInfo(users);
+	}
+
+	@Override
+	public void addUser(EmployeeInfo usersdata) {
+		this.employeeInfoDao.InsertEmployeeInfo(usersdata);
 	}
 
 }

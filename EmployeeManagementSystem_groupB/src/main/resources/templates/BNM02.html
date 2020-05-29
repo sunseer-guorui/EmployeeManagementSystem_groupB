@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel = "shortcut icon" href="../resources/favicon.ico" th:href="@{/static/favicon.ico}">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="default.css" />
+<link rel="stylesheet" type="text/css" href="../css/default.css" />
     <title>新規社員登録確認画面</title>
     <meta name="description" content="新規社員登録確認画面です。">
 <style type="text/css">
@@ -21,76 +21,55 @@
 }
 </style>
 </head>
-<body> 
-    <div class=form-BNM02
-            background color ="#fafafa";>
-        
-    <center>
-        <table class="row">
-            
-            <br>
+<body>
+<div class=form-BNM02 background color ="#fafafa";>
 
-            <center><p style="font-size: x-large">新規社員登録確認</p></font></center>
-                
+    <center>
+       <table class="row">
+
+       <br>
+
+       <center><p style="font-size: x-large">新規社員登録確認</p></font></center>
+       <span th:each="e : ${usersdata}"  enctype="multipart/form-data">
        <table border="2" style="width: 1015px">
             <tbody>
-                <tr>
-                    <td rowspan="5" width="20%" class="text-center"><img src="http://placehold.jp/150x150.png" alt=""></td>
-                    <td width="35%">氏名：石丸理穂</td>
-                    <td width="35%">性別：女性</td>
-                    <tr>
-                    <td width="35%">フリガナ：イシマル　リホ</td>
-                    <td width="35%">部署：○○○○○○○○部署</td>
-                    <tr>
-                    <td width="35%">生年月日：1997/09/13</td>
-                    <td width="35%">メールアドレス：mail@sample.com</td>
-                </tr>
-                <tr>
-                    <td width="35%">電話番号:090-1234-5678</td>
-                    <td width="35%">住所：東京都中央区1-1-1</td>
-                    <tr>
-                    <td width="35%">学歴：○○○○大学○○○○学部○○○○学科</td>
-                    <td width="35%">特技:一輪車</td>
-                </tr>
+	            <tr>
+	                <td rowspan="5" width="20%" class="text-center">
+	                <img th:src="@{/images/rotPhoto/{filename}(filename=${e.user_image})}" height="131" width="195"></td><!--写真追加部分-->
+	                <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
+	                <td width="35%"th:text="|性別:${e.user_gender}|"></td>
+	            </tr>
+	            <tr>
+	                <td width="35%" th:text="|フリガナ:${e.user_firstkata} ${e.user_lastkata}|"></td>
+	                <td width="35%" th:text="|部署:${e.depart_name}|"></td>
+	                <tr>
+	                    <td width="35%" th:text="|生年月日:${e.user_birth}|"></td>
+	                    <td width="35%" th:text="|メールアドレス:${e.user_mail}|"></td>
+	                </tr>
+	            </tr>
+	            <tr>
+	                <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
+	                <td width="35%" th:text="|住所:${e.user_address}|"></td>
+	            </tr>
+	            <tr>
+	                <td width="35%" th:text="|学歴:${e.user_education}|"></td>
+	                <td width="35%" th:text="|特技:${e.user_special}|"></td>
+	            </tr>
             </tbody>
         </table>
-                
-            <p class="auto-style2">
+		</span>
+        <p class="auto-style2">
 			<span class="auto-style1" style="width: 263px">以上の内容で完了しますか?</span><br>
             <div class="button-panel" style="width: 100%" align="center">
-               <center></center> <input type="submit" class="button" title="Sign In" value="戻る" style="width: 31%" align="center" onclick="location.href='BNM01.html'"></input>
-               <input type="submit" class="button" title="Sign In" value="完了" style="width: 31%" align="center" onclick="location.href='BNM03.html'"></input></center>
-                 
-            　　　　　</div>
+            <form th:action="@{/user/BNM02}" method="post">
+            <a th:href="@{/user/BNM01}"><input type="submit" class="button" title="return" value="戻る" style="width: 31%" align="center"></a>
+	            <input type="submit" class="button" title="OK" value="完了" style="width: 31%" align="center">
+            </form>
+            </div>
 
-		
-        </input>
-        　　　　　</div>
-            
-        
-        </form>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <hr>
-              <center><div> <a>〒110-0015 東京東上野台東市6丁目−2−番1号MPR東上野ビル10F</a></div></center>
-              <center><div>   <span style="width: 227px">© 2020 Sunseer corporation</span> </div></center>
-              
+    	<hr class="footer">
+        <center><div> <a>〒110-0015 東京都東上野台東市6丁目2番1号MPR東上野ビル10F</a></div></center>
+        <center><div>  <a>© 2020 Sunseer corporation</a> </div></center>
         </div>
         </body>
         </html>

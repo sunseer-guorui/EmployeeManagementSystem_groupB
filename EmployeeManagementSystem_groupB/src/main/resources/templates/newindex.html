@@ -7,7 +7,8 @@
         <title>社員管理システム</title>
 
         <link rel="stylesheet" type="text/css" href="../css/newindex.css" />
-        <!--<script src="./js/all.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../js/newindex.js" charset="utf-8"></script>
         <link rel="icon" href="favicon.ico">
         <style type="text/css">
         </style>
@@ -17,12 +18,12 @@
         <header>
                <div class="header__inner"></div>
                <h1>
-                   <a href="index.html"><img src="../images/logo2.jpeg" alt="sunseermark" title="sunseermark" height="40" width="40"> 社員管理システム</a>
+                   <a href="newindex.html"><img src="../images/logo2.jpeg" alt="sunseermark" title="sunseermark" height="40" width="40"> 社員管理システム</a>
                 </h1>
               <nav class="pc-nav">
                   <ul>
-                      <li class="hov"><a href="BNM01.html" class=""><i class="fas fa-user-plus colorpink"></i> 新規社員登録</a></li>
-                      <li class="hov"><a href="B0.html" class=""><i class="fas fa-sign-out-alt colorpink"></i> ログアウト</a></li>
+                      <li class="hov"><a th:href="@{/user/BNM01}" class=""><i class="fas fa-user-plus colorpink"></i> 新規社員登録</a></li>
+                      <li class="hov"><a th:href="@{/user/B0}" class=""><i class="fas fa-sign-out-alt colorpink"></i> ログアウト</a></li>
                   </ul>
               </nav>
 
@@ -37,7 +38,7 @@
                 <!-- ▼検索ボックス -->
                 <div class="searchbox">
                     <h2>検索</h2>
-                    <form th:action="@{/groupB/newindex}" method="post" th:object="${employeeInfo}">
+                    <form th:action="@{/user/newindex}" method="post" th:object="${employeeInfo}">
                         <table class="research1" style="text-align:left">
                             <tr style="width: 170px;" >
                                 <th align="right">氏：</th>
@@ -150,15 +151,15 @@
                         <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 学歴</button></td>
                         <td><button type="button"  class="button"><i class="fas fa-sort""colorpink"></i> 特技</button></td>
                         </div>
-						<span th:each="e : ${list}">
-	                        <table border="2" style="width: 900px">
+						<span th:each="e : ${list}" enctype="multipart/form-data">
+	                        <table border="2" style="width: 900px" name="${e.user_id}">
 	                            <tbody>
                                     <tr>
                                         <td rowspan="5" width="20%" class="text-center">
-                                        <img alt="" height="131" width="195"></td><!--写真追加部分-->
+                                        <img th:src="@{/images/rotPhoto/{filename}(filename=${e.user_image})}" height="131" width="195"></td><!--写真追加部分-->
                                         <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
                                         <td width="35%"th:text="|性別:${e.user_gender}|"></td>
-                                        <td rowspan="3" class="text-center" style="width: 10%" align="center"><a href="BME01.html">
+                                        <td rowspan="3" class="text-center" style="width: 10%" align="center"><a th:href="@{/user/preUpdateUser(id=${e.user_id})}">
                                         <button type="button"  class="button"><i class="fas fa-wrench colorpink"></i> 修正</button></td>
                                     </tr>
                                     <tr>
@@ -170,11 +171,14 @@
                                         </tr>
                                     </tr>
                                     <tr>
-                                        <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
-                                        <td width="35%" th:text="|住所:${e.user_address}|"></td>
-                                        <td rowspan="2" class="text-center" style="width: 10%" align="center">
-                                        <button class="button"><i class="fas fa-trash-alt colorpink"></i> 削除</button></td>
+                                        <form th:action="@{/user/newindex(id=${e.user_id})}" method="post">
+                                            <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
+                                            <td width="35%" th:text="|住所:${e.user_address}|"></td>
+                                            <td rowspan="2" class="text-center" style="width: 10%" align="center">
+                                            <button type="submit" class="button" name="delete"><i class="fas fa-trash-alt colorpink"></i> 削除</button></td>
+                                        </form>
                                     </tr>
+
                                     <tr>
                                         <td width="35%" th:text="|学歴:${e.user_education}|"></td>
                                         <td width="35%" th:text="|特技:${e.user_special}|"></td>

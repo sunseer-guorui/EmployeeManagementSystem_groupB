@@ -1,11 +1,6 @@
 package com.sunseer.groupB.pojo;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.springframework.web.multipart.MultipartFile;
-
-public class EmployeeInfo {
+public class EmployeeInfoPhoto {
 	private int user_id;
 	private String user_firstname;
 	private String user_lastname;
@@ -19,7 +14,8 @@ public class EmployeeInfo {
 	private String user_address;
 	private String user_education;
 	private String user_special;
-	private MultipartFile user_image;
+	private String user_image;
+
 
 	public int getUser_id() {
 		return user_id;
@@ -136,54 +132,45 @@ public class EmployeeInfo {
 		this.user_special = user_special;
 	}
 	public String getUser_image() {
-//		String facePhoto = "";
-		File photo = new File("C:\\images\\rotPhoto\\" + user_image.getOriginalFilename());
-		try {
-			if(!photo.exists()) {
-				user_image.transferTo(photo);
-//				facePhoto = "C:\\Users\\2015NEC21\\Downloads\\" + user_image.getOriginalFilename();
-			}
-		} catch (IllegalStateException | IOException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
-		return user_image.getOriginalFilename();
+		return user_image;
 	}
-	public void setUser_image(MultipartFile user_image) {
+	public void setUser_image(String user_image) {
 		this.user_image = user_image;
 	}
 
+	public String makeSearchSql() {
+		StringBuffer sql = new StringBuffer();
 
-//	public String makeSearchSql() {
-//		StringBuffer sql = new StringBuffer();
-//
-//		sql.append("where");
-//		if(this.getUser_firstname().equals("") == false)
-//			sql.append(" user_firstname like '%" + this.getUser_firstname() +"%' and ");
-//		if(this.getUser_lastname().equals("") == false)
-//			sql.append(" user_lastname like '%" + this.getUser_lastname() +"%' and ");
-//		if(this.getUser_firstkata().equals("") == false)
-//			sql.append(" user_firstkata like '%" + this.getUser_firstkata() +"%' and ");
-//		if(this.getUser_lastkata().equals("") == false)
-//			sql.append(" user_lastkata like '%" + this.getUser_lastkata() +"%' and ");
-//		if(this.getUser_gender().equals("") == false)
-//			sql.append(" user_gender like '%" + this.getUser_gender() +"%' and ");
-//		if(this.getDepart_name().equals("") == false)
-//			sql.append(" depart_name like '%" + this.getDepart_name() +"%' and ");
-//		if(this.getUser_birth().equals("") == false)
-//			sql.append(" user_birth like '%" + this.getUser_birth() +"%' and ");
-//		if(this.getUser_tele().equals("") == false)
-//			sql.append(" user_tele like '%" + this.getUser_tele() +"%' and ");
-//		if(this.getUser_mail().equals("") == false)
-//			sql.append(" user_mail like '%" + this.getUser_mail() +"%' and ");
-//		if(this.getUser_address().equals("") == false)
-//			sql.append(" user_address like '%" + this.getUser_address() +"%' and ");
-//		if(this.getUser_education().equals("") == false)
-//			sql.append(" user_education like '%" + this.getUser_education() +"%' and ");
-//		if(this.getUser_special().equals("") == false)
-//			sql.append(" user_special like '%" + this.getUser_special() +"%' and ");
-//
-//		sql.delete(sql.length()-5, sql.length());
-//		return sql.toString();
-//	}
+		sql.append("where");
+		if(this.getUser_firstname().equals("") == false)
+			sql.append(" user_firstname like '%" + this.getUser_firstname() +"%' and ");
+		if(this.getUser_lastname().equals("") == false)
+			sql.append(" user_lastname like '%" + this.getUser_lastname() +"%' and ");
+		if(this.getUser_firstkata().equals("") == false)
+			sql.append(" user_firstkata like '%" + this.getUser_firstkata() +"%' and ");
+		if(this.getUser_lastkata().equals("") == false)
+			sql.append(" user_lastkata like '%" + this.getUser_lastkata() +"%' and ");
+		if(this.getUser_gender().equals("") == false)
+			sql.append(" user_gender like '%" + this.getUser_gender() +"%' and ");
+		if(this.getDepart_name().equals("") == false)
+			sql.append(" depart_name like '%" + this.getDepart_name() +"%' and ");
+		if(this.getUser_birth().equals("") == false)
+			sql.append(" user_birth like '%" + this.getUser_birth() +"%' and ");
+		if(this.getUser_tele().equals("") == false)
+			sql.append(" user_tele like '%" + this.getUser_tele() +"%' and ");
+		if(this.getUser_mail().equals("") == false)
+			sql.append(" user_mail like '%" + this.getUser_mail() +"%' and ");
+		if(this.getUser_address().equals("") == false)
+			sql.append(" user_address like '%" + this.getUser_address() +"%' and ");
+		if(this.getUser_education().equals("") == false)
+			sql.append(" user_education like '%" + this.getUser_education() +"%' and ");
+		if(this.getUser_special().equals("") == false)
+			sql.append(" user_special like '%" + this.getUser_special() +"%' and ");
+
+		sql.delete(sql.length()-5, sql.length());
+		return sql.toString();
+	}
 }
+
+
+
