@@ -2,59 +2,59 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <link rel = "shortcut icon" href="../resources/favicon.ico" th:href="@{/static/favicon.ico}">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="../css/default.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../css/default.css" />
     <title>社員情報編集確認画面</title>
     <link rel="icon" href="favicon.ico">
     <meta name="description" content="社員情報編集確認画面です。">
-<style type="text/css">
-    span{
-        width: 130px;
-        height: 37px;
-        display: inline-block;
-        text-align: justify;
-        text-justify: inter-ideograph;
-        -webkit-text-align:justify;
-        -moz-text-align: justify;
-    }
-.auto-style1 {
-	font-size: large;
-}
-</style>
+	<style type="text/css">
+	    span{
+	        width: 130px;
+	        height: 37px;
+	        display: inline-block;
+	        text-align: justify;
+	        text-justify: inter-ideograph;
+	        -webkit-text-align:justify;
+	        -moz-text-align: justify;
+	    }
+	.auto-style1 {
+		font-size: large;
+	}
+	</style>
 </head>
 <body>
     <center>
         <table class="row">
             <h1 style="width: 668px">社員情報修正確認</h1>
 
-       <span th:each="e : ${usersdata}"  enctype="multipart/form-data">
-	       <table border="2" style="width: 1015px">
-	            <tbody>
-		            <tr>
-		                <td rowspan="5" width="20%" class="text-center">
-		                <img th:src="@{/images/rotPhoto/{filename}(filename=${e.user_image})}" height="131" width="195"></td><!--写真追加部分-->
-		                <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
-		                <td width="35%"th:text="|性別:${e.user_gender}|"></td>
-		            </tr>
-		            <tr>
-		                <td width="35%" th:text="|フリガナ:${e.user_firstkata} ${e.user_lastkata}|"></td>
-		                <td width="35%" th:text="|部署:${e.depart_name}|"></td>
-		                <tr>
-		                    <td width="35%" th:text="|生年月日:${e.user_birth}|"></td>
-		                    <td width="35%" th:text="|メールアドレス:${e.user_mail}|"></td>
-		                </tr>
-		            </tr>
-		            <tr>
-		                <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
-		                <td width="35%" th:text="|住所:${e.user_address}|"></td>
-		            </tr>
-		            <tr>
-		                <td width="35%" th:text="|学歴:${e.user_education}|"></td>
-		                <td width="35%" th:text="|特技:${e.user_special}|"></td>
-		            </tr>
-	            </tbody>
-	        </table>
-		</span>
+	       <span th:each="e : ${usersdata}"  enctype="multipart/form-data">
+		       <table border="2" style="width: 1015px">
+		            <tbody>
+			            <tr>
+			                <td rowspan="5" width="20%" class="text-center">
+			                <img th:src="@{/images/rotPhoto/{filename}(filename=${e.user_image})}" height="131" width="195"></td><!--写真追加部分-->
+			                <td width="35%" th:text="|氏名:${e.user_firstname} ${e.user_lastname}|"></td>
+			                <td width="35%"th:text="|性別:${e.user_gender}|"></td>
+			            </tr>
+			            <tr>
+			                <td width="35%" th:text="|フリガナ:${e.user_firstkata} ${e.user_lastkata}|"></td>
+			                <td width="35%" th:text="|部署:${e.depart_name}|"></td>
+			                <tr>
+			                    <td width="35%" th:text="|生年月日:${e.user_birth}|"></td>
+			                    <td width="35%" th:text="|メールアドレス:${e.user_mail}|"></td>
+			                </tr>
+			            </tr>
+			            <tr>
+			                <td width="35%" th:text="|電話番号:${e.user_tele}|"></td>
+			                <td width="35%" th:text="|住所:${e.user_address}|"></td>
+			            </tr>
+			            <tr>
+			                <td width="35%" th:text="|学歴:${e.user_education}|"></td>
+			                <td width="35%" th:text="|特技:${e.user_special}|"></td>
+			            </tr>
+		            </tbody>
+		        </table>
+			</span>
 
             <p class="auto-style2">
 				<span class="auto-style1" style="width: 263px">以上の内容で完了しますか?</span>

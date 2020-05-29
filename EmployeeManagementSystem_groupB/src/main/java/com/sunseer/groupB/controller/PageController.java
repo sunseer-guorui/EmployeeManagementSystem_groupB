@@ -70,7 +70,7 @@ public class PageController {
 	public String ChackInfo(EmployeeInfo usersdata, Model model) {
 		try {
 			model.addAttribute("usersdata",usersdata);
-//			this.employeeInfoService.addUser(usersdata);
+			this.employeeInfoService.addUser(usersdata);
 //			user_image.transferTo(new File("C:\\Users\\2015NEC21\\Downloads\\" + useruser_image.getOriginalFilename()));
 		}catch(Exception e){
 			e.printStackTrace();
@@ -80,11 +80,11 @@ public class PageController {
 	}
 
 	@PostMapping("/BNM02")
-	public String showInfo(@ModelAttribute("e") EmployeeInfo e,Model model) {
+	public String showInfo(@ModelAttribute EmployeeInfo e,Model model) {
 		List<EmployeeInfoPhoto> list = null;
 		try {
 //			model.addAttribute("usersdata",usersdata);
-			this.employeeInfoService.addUser(e);
+//			this.employeeInfoService.addUser(e);
 			list = this.employeeInfoService.FindEmployeeInfoAll();
 			model.addAttribute("list",list);
 //			user_image.transferTo(new File("C:\\Users\\2015NEC21\\Downloads\\" + useruser_image.getOriginalFilename()));
@@ -92,9 +92,8 @@ public class PageController {
 			error.printStackTrace();
 			return "BNM01";
 		}
-		return "newindex";
+		return "redirect:newindex";
 	}
-
 
 	//GetMappingで社員一覧ページへ移動したときは社員一覧を表示する
 	@GetMapping("/newindex")

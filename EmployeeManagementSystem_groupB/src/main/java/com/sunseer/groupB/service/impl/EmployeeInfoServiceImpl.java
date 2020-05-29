@@ -50,5 +50,4 @@ public class EmployeeInfoServiceImpl implements EmployeeInfoService {
 	public void addUser(EmployeeInfo usersdata) {
 		this.employeeInfoDao.InsertEmployeeInfo(usersdata);
 	}
-
 }

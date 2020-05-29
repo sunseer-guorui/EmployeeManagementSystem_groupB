@@ -13,4 +13,5 @@ public interface EmployeeInfoDao {
 	public void UpdateEmployeeInfo(EmployeeInfo employeeInfo);
 	public void DeleteEmployeeInfo(int user_id);
 	public List<EmployeeInfo> SortEmployeeInfo(String row,boolean asc);
+
 }

@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
  }
@@ -12,7 +11,7 @@
 /*ヘッダー*/
 
  header {
-    /* padding: 0px 4% 0px; */
+    / padding: 0px 4% 0px; /
     top: 0;
     width: 100%;
     background-color: #fff;
@@ -25,7 +24,7 @@
     font-size: 20px;
     color:#5e5e5e;
  }
- a {	
+ a {
     text-decoration: none;
     color: #5e5e5e;
  }
@@ -38,7 +37,7 @@
     display: flex;
  }
  li {
-    /* margin: 0 0 0 15px; */
+    / margin: 0 0 0 15px; /
     font-size: 14px;
  }
 
@@ -72,6 +71,9 @@ li.hov:hover a{
 li.hov:hover .colorpink{color: white;}
 
 
+
+
+
  /*=================
  ヘッダーから下
  ==================*/
@@ -89,7 +91,7 @@ li.hov:hover .colorpink{color: white;}
      color: #f16272;
  }
 
- button.button[type="submit"],button.button[type="submit"] .colorpink{
+ button.button[id="kensaku"],button.button[id="kensaku"] .colorpink{
      color: white;
      background-color: #f16272;
      transition: all .3s ease-in;
@@ -104,6 +106,7 @@ li.hov:hover .colorpink{color: white;}
      background-color: transparent;
      padding: 0.5em 1em;
      transition: all 0.3s ease-in;
+     cursor: pointer;
 }
 
 button.button:hover,input.button:hover{
@@ -122,29 +125,25 @@ input.button:hover .colorpink,button.button:hover .colorpink{
     margin: 5em auto 0 auto;
     padding: 20px;
     width: 100%;
-    /* height: 1000px; */
+    / height: 1000px; /
     background-color: white;
     display: flex;
 }
 .searchbox{
-    /* display: inline-block; */
+    / display: inline-block; /
     width: 360px;
-    /* border: 1px solid black; */
-    /* height: 700px; */
-    /* padding: 1em; */
+    / border: 1px solid black; /
+    / height: 700px; /
+    / padding: 1em; /
 }
 .listbox{
-    /* display: inline-block; */
+    / display: inline-block; /
     width: 1069px;
-    /* border: 1px solid black; */
-    /* height: 700px; */
-    /* padding: 1em; */
+    / border: 1px solid black; /
+    / height: 700px; /
+    / padding: 1em; /
 }
 
-.sortbox{
-    padding-bottom: 13px;
-    width: 100%;
-}
 
 .searchbox h2, .listbox h2{
     font-weight: bold;
@@ -152,8 +151,45 @@ input.button:hover .colorpink,button.button:hover .colorpink{
     border-bottom: 1px solid #5e5e5e;
     color: #5e5e5e;
     padding: .5em 1em;
-    
+
 }
+
+.sortbox{
+    text-align: left;
+}
+
+
+
+.sortbox a{
+    color:#5e5e5e;
+    font-weight: 120;
+}
+
+.sortbox td{
+    border: 1px solid black;
+}
+
+
+
+button.sortbox{
+    border: .5px solid #f16272;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+
+
+}
+
+button.sortbox,button.sortbox {
+    transition: all .3s ease-in;
+    color: #f16272;
+}
+
+button.sortbox:hover{
+    opacity: 0.7;
+}
+
+
 
 .box-center{
     padding-left: 3em;
@@ -183,6 +219,10 @@ div.form-class{
 hr.footer{
     margin-top: 3em;
 }
+
+
+
+
 
 /*default.css*/
 
@@ -218,17 +258,11 @@ hr.footer{
 
 
 
-body {
-    background: #e9e9e9;
-    color: #5e5e5e;
-    font: 400 87.5%/1.5em 'Open Sans', sans-serif;
-  }
-
   .button-panel {
     margin: 2em 0 0;
     width: 100%;
   }
-  
+
   .button-panel .button {
     background: #f16272;
     border: none;
@@ -239,15 +273,18 @@ body {
     font-size: 1.2em;
     letter-spacing: 0.05em;
     text-align: center;
-    text-transform: uppercase;
-    transition: background 0.3s ease-in-out;
+    transition: 1.0s ;
     width: 100%;
   }
-  
-  .button:hover {
-    background: #ee3e52;
+
+  .button-panel .button:hover{
+      opacity: 0.8;
   }
 
+
+
+
+/*フッター*/
   div.footer{
     margin-top: 3em;
     height: 600px; text-align: center;

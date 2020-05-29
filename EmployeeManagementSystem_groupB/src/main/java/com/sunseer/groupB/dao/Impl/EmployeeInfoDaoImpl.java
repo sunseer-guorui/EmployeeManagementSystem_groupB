@@ -26,8 +26,10 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 		String sql = "insert into userdata(user_firstname,user_lastname,user_firstkata,user_lastkata,user_gender,"
 				+ "depart_name,user_birth,user_tele,user_mail,user_address,user_education,user_special,user_image) "
 				+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
 //		System.out.println(employeeInfo.getUser_image().getOriginalFilename());
 //		MultipartFile photo = employeeInfo.getUser_image();
+
 		try {
 			jdbcTemplate.update(sql,employeeInfo.getUser_firstname(),employeeInfo.getUser_lastname()
 					,employeeInfo.getUser_firstkata(),employeeInfo.getUser_lastkata(),employeeInfo.getUser_gender(),employeeInfo.getDepart_name()
@@ -75,6 +77,7 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 	public List<EmployeeInfoPhoto> SelectEmployeeInfo(EmployeeInfoPhoto employeeInfo) {
 		String sql = "select * from userdata " + employeeInfo.makeSearchSql();
 
+		System.out.println(sql);
 		RowMapper<EmployeeInfoPhoto> rowMapper = new BeanPropertyRowMapper(EmployeeInfoPhoto.class);
 		List<EmployeeInfoPhoto> results = jdbcTemplate.query(sql,rowMapper);
 		return results;
@@ -126,4 +129,5 @@ public class EmployeeInfoDaoImpl implements EmployeeInfoDao {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
+
 }
